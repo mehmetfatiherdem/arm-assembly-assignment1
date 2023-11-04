@@ -60,15 +60,21 @@ __main	PROC
 		BL iterateStr
 		
 		MOV r5, r0 ; hex2 in 32-bit number format
+		
+		LDR r1, =result
+		LDR r0, [r1]
+		
 		UDIV r0, r4, r5
 		MLS r0, r0, r5, r4
+		
+		STR r0, [r1]
 		
 		ENDP
 
 
 
 		AREA data, DATA, READWRITE 
-hex1	DCB	"00000031", 0 ; first null terminated hex string
-hex2	DCB	"0000001A", 0 ; second null terminated hex string
+hex1	DCB	"A0C50131", 0 ; first null terminated hex string
+hex2	DCB	"000A0F1A", 0 ; second null terminated hex string
 result	DCD	0
 		END
