@@ -56,7 +56,7 @@ __main	PROC
 		MOV r4, r0 ; hex1 in 32-bit number format
 		
 		MOVW r0, #0
-		LDR r1, =hex2 ; load the starting address of hex1
+		LDR r1, =hex2 ; load the starting address of hex2
 		BL iterateStr
 		
 		MOV r5, r0 ; hex2 in 32-bit number format
